@@ -1,12 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit"
-import tasksReducer from "./features/tasks/tasks.slice"
-import filtersReducer from "./features/filters/filters.slice"
+import { rootReducer } from "./rootReducer"
+
 
 export const store = configureStore({
-    reducer: {
-        tasks: tasksReducer,
-        filters: filtersReducer
-    },
+    reducer: rootReducer,
+    devTools: import.meta.env.VITE_NODE_ENV === "development" ,
 })
 
 
